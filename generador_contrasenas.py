@@ -8,7 +8,9 @@ CARACTERES_ESPECIALES='!@#$%^&*()_-{[}]/<>'
 tamano=int(input('¿Cuantos caracteres quieres que tenga tu contraseña? '))
 pedir_ma= input('¿Quieres que tu contraseña contenga mayusculas? ')
 pedir_ce= input('¿Quieres que tu contraseña contenga caracteres especiales? ')
-
+rango=int(input('Cuantas contraseñas deseas generar '))
+generar= None
+password=None
 
 conjunto=MINUSCULAS+NUMEROS
 
@@ -17,8 +19,10 @@ if pedir_ma=='si' or pedir_ma=='Si':
 if pedir_ce=='si' or pedir_ce=='Si':
     conjunto=conjunto+CARACTERES_ESPECIALES
 
-generar = random.sample(conjunto, tamano)
-password = ''.join(generar)
-    
-print (password)
+def generarPasswords(rango,generar,conjunto,tamano,password):
+    for _ in range(rango):
+        generar = random.sample(conjunto, tamano)
+        password = ''.join(generar)
+        print (password)
 
+generarPasswords(rango,generar,conjunto,tamano,password)
