@@ -10,6 +10,10 @@ Los errores que normalmente conocemos al escribir una contraseña son ponerle al
 
 Pseudocodigo:
 
-EO (mayúsculas, minúsculas, números, caracteres especiales, contraseña, conjunto) El conjunto contendrá minúsculas y números como estándar de la contraseña Pedir el tamaño de la contraseña
-Pedir el si quiere que tenga caracteres especiales la contraseña Pedir el si quiere que tenga mayúsculas Pedir el número de contraseñas que se desean generar Si quiere caracteres especiales, sumarle al conjunto caracteres especiales Si no entonces no modificar el conjunto Si quiere mayúsculas, sumarle al conjunto mayúsculas Si no entonces no modificar el conjunto Con la función de generarContraseñas Generar contraseñas de manera random y teniendo en cuenta su tamaño solicitado y la cantidad de contraseñas a generar Imprimir las contraseña con un ciclo for EF (Imprimir las contraseñas)
-
+EO (mayúsculas, minúsculas, números, caracteres especiales, contraseña, conjunto, lista) El conjunto contendrá minúsculas y números como estándar de la contraseña Pedir el tamaño de la contraseña
+Se define la funcion de generar contraseñas
+Mientras que opcion sea igual a 1 y menor que 4 se realizara:
+  Se da opciones para elegir de un menu
+  Si opcion = 1, se llama a la funcion de generar contrañas pidiendose el tamaño de la contraseña, si quiere que tenga mayusculas, si quiere que tenga carateres    especiales y el numero de contraseñas a generar.
+  Si opcion = 2, se agrega la a una lista
+  Si opcion = 3, se optienen las contrañas guardas en la lista
