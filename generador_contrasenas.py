@@ -1,3 +1,4 @@
+#biblioteca
 import random
 
 #Se definen las variables con caracteres que llevara una contraseña
