@@ -1,6 +1,17 @@
 #biblioteca
 import random
 
+def generarPasswords(rango,generar,conjunto,tamano,password):
+    for _ in range(rango):
+        generar = random.sample(conjunto, tamano)
+        password = ''.join(generar)
+        print (password)
+        
+def guardarContraseñas(contraseñasGuardadas,usuario,contraseña):
+    contraseñasGuardadas.append([])
+    contraseñasGuardadas[-1].append(usuario)
+    contraseñasGuardadas[-1].append(contraseña)    
+    
 #Se definen las variables con caracteres que llevara una contraseña
 MINUSCULAS='abcdefghijklmnñopqrstuvwxyz'
 MAYUSCULAS=MINUSCULAS.upper()
@@ -14,20 +25,6 @@ password=None
 conjunto=MINUSCULAS+NUMEROS
 
 contraseñasGuardadas=[]
-
-def generarPasswords(rango,generar,conjunto,tamano,password):
-    for _ in range(rango):
-        generar = random.sample(conjunto, tamano)
-        password = ''.join(generar)
-        print (password)
-
-#introducir contraseñas a la lista anidada
-def guardarContraseñas(contraseñasGuardadas,usuario,contraseña):
-    contraseñasGuardadas.append([])
-    contraseñasGuardadas[-1].append(usuario)
-    contraseñasGuardadas[-1].append(contraseña)    
-    
-        
         
 opcion=input('Si deseas generar una o varias contraseñas selecciona 1 \n'
             'Si deseas guardar tu contraseña generada selecciona 2\n'
