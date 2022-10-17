@@ -6,10 +6,14 @@ y guardar lo anterior nombrado en listas, el usuario puede
 acceder a esta informacion
 """
 
-#biblioteca
+#bibliotecas
 import random
 
-def generarPasswords(rango,generar,conjunto,tamano,password):
+"""
+===============Funciones de opciones del menu=================================
+"""
+
+def password_generator(rango,generar,conjunto,tamano,password):
     for _ in range(rango):
         generar = random.sample(conjunto, tamano)
         password = ''.join(generar)
