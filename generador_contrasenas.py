@@ -1,3 +1,11 @@
+"""
+Proyecto en Python
+Generador de contraseñas y encriptacion de mensajes
+Crea contraseñas de manera aleatoria, cifra cadenas de texto
+y guardar lo anterior nombrado en listas, el usuario puede
+acceder a esta informacion
+"""
+
 #biblioteca
 import random
 
