@@ -26,6 +26,16 @@ def save_password(usuario,contraseña):
     saved_passwords.append([])
     saved_passwords[-1].append(usuario)
     saved_passwords[-1].append(contraseña)    
+
+def encriptar():
+    encriptada=''
+    for letra in mensajeEncriptado: 
+        if letra in 'aeiouáéíóú':
+            encriptada = encriptada + 'x'
+        else :
+            encriptada = encriptada + letra
+    return encriptada
+    
     
 #Se definen las variables con caracteres que llevara una contraseña
 MINUSCULAS='abcdefghijklmnñopqrstuvwxyz'
