@@ -19,10 +19,13 @@ def password_generator(rango,generar,conjunto,tamano,password):
         password = ''.join(generar)
         print (password)
         
-def guardarContraseñas(contraseñasGuardadas,usuario,contraseña):
-    contraseñasGuardadas.append([])
-    contraseñasGuardadas[-1].append(usuario)
-    contraseñasGuardadas[-1].append(contraseña)    
+def save_password(usuario,contraseña):
+    """
+    recibe: 
+    """
+    saved_passwords.append([])
+    saved_passwords[-1].append(usuario)
+    saved_passwords[-1].append(contraseña)    
     
 #Se definen las variables con caracteres que llevara una contraseña
 MINUSCULAS='abcdefghijklmnñopqrstuvwxyz'
@@ -56,7 +59,7 @@ while opcion!='0' or opcion<'4' or opcion == 'no':
     elif opcion=='2':
         usuario=input('Usuario,correo electronico o cuenta: ')
         contraseña=input('Contraseña: ')
-        guardarContraseñas(contraseñasGuardadas,usuario,contraseña)
+        save_password(saved_passwords,usuario,contraseña)
         opcion=input('¿Deseas elegir otra opcion?: ')
     elif opcion=='3':
         print(contraseñasGuardadas)
