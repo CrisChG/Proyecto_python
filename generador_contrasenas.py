@@ -35,7 +35,12 @@ def encriptar():
         else :
             encriptada = encriptada + letra
     return encriptada
-    
+ 
+def save_messages(mensaje):
+    return
+
+def desencriptar(): 
+    return
     
 #Se definen las variables con caracteres que llevara una contraseña
 MINUSCULAS='abcdefghijklmnñopqrstuvwxyz'
