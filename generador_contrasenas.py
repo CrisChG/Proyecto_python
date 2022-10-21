@@ -13,19 +13,26 @@ import random
 ===============Funciones de opciones del menu=================================
 """
 
-def password_generator(rango,generar,conjunto,tamano,password):
-    for _ in range(rango):
-        generar = random.sample(conjunto, tamano)
-        password = ''.join(generar)
-        print (password)
-        
-def save_password(usuario,contraseña):
+def password_generator(num_passwords,conjunto,longitud):
     """
-    recibe: 
+    recibe: num_passwords, conjunto y longitud
+    genera multiples strings determinados por el usuario por medio de un 
+    ciclo for y lo manda a imprimir por la variable new_password
+    """
+    for i in range(num_passwords):
+        generar = random.sample(conjunto, longitud)
+        new_password = ''.join(generar)
+        print (new_password)
+        
+def save_password(usuario,password,saved_passwords):
+    """
+    recibe: usuario, password y la lista saved_passwords
+    agrega una lista anidada a la lista de saved_passwords guardando 
+    el usuario y la contraseña
     """
     saved_passwords.append([])
     saved_passwords[-1].append(usuario)
-    saved_passwords[-1].append(contraseña)    
+    saved_passwords[-1].append(password)    
 
 def encriptar():
     encriptada=''
