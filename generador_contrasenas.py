@@ -85,7 +85,7 @@ password=None
 minusculas2=MINUSCULAS + ' '
 conjunto=MINUSCULAS+NUMEROS
 
-        
+#Entrada de dato que determina a que funcion se va a llamar        
 opcion=int(input('Si deseas generar una o varias contraseñas selecciona 1!\n'
                 'Si deseas guardar tu contraseña selecciona 2!\n'
                 'Si deseas recuperar las contrañas guardadas selecciona 3!\n'
@@ -94,27 +94,69 @@ opcion=int(input('Si deseas generar una o varias contraseñas selecciona 1!\n'
                 'Si deseas acceder a tus mensajes encriptados selecciona 6!\n'
                 'Si deseas terminar el programa selecciona 7!\n'))
 
-while type(option)==int:
-    if opcion=='1':
-        tamano=int(input('¿Cuantos caracteres quieres que tenga tu contraseña?: '))
-        pedir_ma= input('¿Quieres que tu contraseña contenga mayusculas?: ')
-        if pedir_ma=='si' or pedir_ma=='Si':
+while opcion!=0:
+    if opcion==1:
+        #datos solicitados
+        longitud=int(input('¿Cuantos caracteres quieres que tenga tu contraseña?: '))
+        pedir_ma=int(input('Si quieres que tu contraseña contenga mayusculas selecciona 1\n'
+                           'En el caso que no quieras selecciona 0: \n'))
+        if pedir_ma==1:
              conjunto=conjunto+MAYUSCULAS
-        pedir_ce= input('¿Quieres que tu contraseña contenga caracteres especiales?: ')
-        if pedir_ce=='si' or pedir_ce=='Si':
+        pedir_ce=int(input('Si quieres que tu contraseña contenga caracteres especiales selecciona 1\n'
+                           'En el caso que no quieras selecciona 0: \n'))
+        if pedir_ce==1:
              conjunto=conjunto+CARACTERES_ESPECIALES
-        rango=int(input('Cuantas contraseñas deseas generar? :'))
-        generarPasswords(rango,generar,conjunto,tamano,password)
-        opcion=input('¿Deseas elegir otra opcion?: ')
-    elif opcion=='2':
+        num_passwords=int(input('¿Cuantas contraseñas deseas generar? :'))
+        password_generator(num_passwords,conjunto,longitud)
+        
+    elif opcion==2:
+        #datos solicitados
         usuario=input('Usuario,correo electronico o cuenta: ')
-        contraseña=input('Contraseña: ')
-        save_password(saved_passwords,usuario,contraseña)
-        opcion=input('¿Deseas elegir otra opcion?: ')
-    elif opcion=='3':
-        print(contraseñasGuardadas)
-        opcion=input('¿Deseas elegir otra opcion?: ')
-    elif opcion=='no' or 'No':  
+        password=input('Contraseña: ')
+        save_password(usuario,password,saved_passwords)
+        print('Tu contraseña fue guardada exitosamente')
+        
+    elif opcion==3:
+        if len(saved_passwords)==0:
+            print('Aun no has guardado ninguna contraseña')
+        else:
+            print(saved_passwords)
+        
+    elif opcion==4:
+        #datos solicitados
+        mensaje = input('Escribe tu mensaje que quieres encriptar: ')
+        mensaje=mensaje.lower()
+        mensaje_guardar=encriptar(mensaje,minusculas2)
+        print(mensaje_guardar)
+        guardar_opcion=int(input('Si deseas guardar tu mensaje encriptado preciona 1 \n'
+                                 'En el caso de que no quieras guardar el mensaje preciona 2 \n'))
+        if guardar_opcion == 1:
+            save_messages(mensaje_guardar,mensajes_encriptados)
+            print('Tu texto encriptado ha sido guardado con exito')
+        else:
+            print("Tu mensaje no fue guardado")
+        
+    elif opcion==5:
+        #datos solicitados
+        mensaje_encriptado=str(input('Escribe el texto a desencriptar: '))
+        print(desencriptar(mensaje_encriptado,minusculas2))
+        
+    elif opcion==6:
+        #datos solicitados
+        if len(mensajes_encriptados)==0:
+            print('Aun no has guardado ningun mensaje encriptado')
+        else:    
+            print(mensajes_encriptados)
+        
+    elif opcion==7:
+        #se rompe el ciclo while
         break
-else:
-    print('Opcion invalida')
+    elif opcion>7:
+        print('Opcion no valida')
+    opcion=int(input('Si deseas generar una o varias contraseñas selecciona 1!\n'
+                'Si deseas guardar tu contraseña selecciona 2!\n'
+                'Si deseas recuperar las contrañas guardadas selecciona 3!\n'
+                'Si deseas encriptar tu mensaje selecciona 4!\n'
+                'Si deseas desencriptar tu mensaje selecciona 5!\n'
+                'Si deseas acceder a tus mensajes encriptados selecciona 6!\n'
+                'Si deseas terminar el programa selecciona 7!\n'))
