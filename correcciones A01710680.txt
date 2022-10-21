@@ -1,0 +1,36 @@
+Subcompetencia SICT0301A:
+
+	componente: aplica estructuras cíclicas para resolver un problema de manera eficiente
+
+
+Error original: No haces uso de estructuras cíclicas
+
+Cambio realizado: Se añaden ciclos for, el menu contiene un while tambien
+
+
+for i in mensaje_encriptado:
+        descifrar=minusculas2.find(i) - 3
+        modulo = int(descifrar)% len(minusculas2)
+        mensaje_desencriptado= mensaje_desencriptado+str(minusculas2[modulo])
+return mensaje_desencriptado
+
+
+for i in mensaje: 
+        cifrar=minusculas2.find(i) + 3
+        modulo=int(cifrar)% len(minusculas2)
+        mensaje_encriptado=mensaje_encriptado+str(minusculas2[modulo])
+return mensaje_encriptado
+
+
+for i in range(num_passwords):
+        generar = random.sample(conjunto, longitud)
+        new_password = ''.join(generar)
+        print (new_password)
+
+
+Lineas de código donde se ve la correción: 45 a 49, 66 a 70 y 97 a 162(esto es el while del menu principal)
+
+-------------------------------------------------------------------------------------------------------------
+
+PD: lo del avance 1 no sabia que se tenia que subir el link del repositorio y la creacion de la cuenta en
+github, pero de todos modos ya tenia creada la cuenta desde 2021 y el repositoria tambien lo cree en clase :c
