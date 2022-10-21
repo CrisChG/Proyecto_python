@@ -34,39 +34,67 @@ def save_password(usuario,password,saved_passwords):
     saved_passwords[-1].append(usuario)
     saved_passwords[-1].append(password)    
 
-def encriptar():
-    encriptada=''
-    for letra in mensajeEncriptado: 
-        if letra in 'aeiouáéíóú':
-            encriptada = encriptada + 'x'
-        else :
-            encriptada = encriptada + letra
-    return encriptada
+def encriptar(mensaje,minusculas2):
+    """
+    recibe: mensaje y minusculas2
+    se crea un string el cual contendra el mensaje solo que se 
+    le sustituyen las letras dependiendo su indice por medio de un ciclo for
+    devuelve: mensaje_encriptado
+    """
+    mensaje_encriptado=''
+    for i in mensaje: 
+        cifrar=minusculas2.find(i) + 3
+        modulo=int(cifrar)% len(minusculas2)
+        mensaje_encriptado=mensaje_encriptado+str(minusculas2[modulo])
+    return mensaje_encriptado
  
-def save_messages(mensaje):
-    return
+def save_messages(mensaje_guardar,mensajes_encriptados):
+    """
+    recibe: mensaje_guardar y mensajes_encriptados
+    añade un texto a la lista de mensajes encriptados
+    """
+    mensajes_encriptados.append(mensaje_guardar)
 
-def desencriptar(): 
-    return
+def desencriptar(mensaje_encriptado,minusculas2): 
+    """
+    recibe: mensaje y minusculas2
+    se crea un string el cual contedran el mensaje_encriptado solo que se
+    le sustituyen las letras dependiendo su indice por medio de un ciclo for
+    devuelve: mensaje_desencriptado
+    """
+    mensaje_desencriptado=''
+    for i in mensaje_encriptado:
+        descifrar=minusculas2.find(i) - 3
+        modulo = int(descifrar)% len(minusculas2)
+        mensaje_desencriptado= mensaje_desencriptado+str(minusculas2[modulo])
+    return mensaje_desencriptado
     
-#Se definen las variables con caracteres que llevara una contraseña
+#Definicion de constantes
 MINUSCULAS='abcdefghijklmnñopqrstuvwxyz'
 MAYUSCULAS=MINUSCULAS.upper()
 NUMEROS='1234567890'
 CARACTERES_ESPECIALES='!@#$%^&*()_-{[}]/<>'
 
-#variables para generar la contraseña
+#Definicion de listas
+mensajes_encriptados=[]
+saved_passwords=[]
+
+#Variables normales
 generar= None
 password=None
-
+minusculas2=MINUSCULAS + ' '
 conjunto=MINUSCULAS+NUMEROS
 
-contraseñasGuardadas=[]
         
-opcion=input('Si deseas generar una o varias contraseñas selecciona 1 \n'
-            'Si deseas guardar tu contraseña generada selecciona 2\n'
-            'Si deseas recuperar las contrañas guardadas selecciona 3\n:')
-while opcion!='0' or opcion<'4' or opcion == 'no':
+opcion=int(input('Si deseas generar una o varias contraseñas selecciona 1!\n'
+                'Si deseas guardar tu contraseña selecciona 2!\n'
+                'Si deseas recuperar las contrañas guardadas selecciona 3!\n'
+                'Si deseas encriptar tu mensaje selecciona 4!\n'
+                'Si deseas desencriptar tu mensaje selecciona 5!\n'
+                'Si deseas acceder a tus mensajes encriptados selecciona 6!\n'
+                'Si deseas terminar el programa selecciona 7!\n'))
+
+while type(option)==int:
     if opcion=='1':
         tamano=int(input('¿Cuantos caracteres quieres que tenga tu contraseña?: '))
         pedir_ma= input('¿Quieres que tu contraseña contenga mayusculas?: ')
