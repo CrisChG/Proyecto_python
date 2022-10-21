@@ -98,9 +98,9 @@ while opcion!=0:
     if opcion==1:
         #datos solicitados
         longitud=int(input('¿Cuantos caracteres quieres que tenga tu contraseña?: '))
-        pedir_ma=int(input('Si quieres que tu contraseña contenga mayusculas selecciona 1\n'
+        pedir_mayusculas=int(input('Si quieres que tu contraseña contenga mayusculas selecciona 1\n'
                            'En el caso que no quieras selecciona 0: \n'))
-        if pedir_ma==1:
+        if pedir_mayusculas==1:
              conjunto=conjunto+MAYUSCULAS
         pedir_ce=int(input('Si quieres que tu contraseña contenga caracteres especiales selecciona 1\n'
                            'En el caso que no quieras selecciona 0: \n'))
