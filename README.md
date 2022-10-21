@@ -10,10 +10,17 @@ Los errores que normalmente conocemos al escribir una contraseña son ponerle al
 
 Pseudocodigo:
 
-EO (mayúsculas, minúsculas, números, caracteres especiales, contraseña, conjunto, lista) El conjunto contendrá minúsculas y números como estándar de la contraseña Pedir el tamaño de la contraseña
+Inicio (mayúsculas, minúsculas, números, caracteres especiales, contraseña, conjunto, lista, matriz, minusculas2) El conjunto contendrá minúsculas y números como estándar de la contraseña Pedir el tamaño de la contraseña
 Se define la funcion de generar contraseñas
-Mientras que opcion sea igual a 1 y menor que 4 se realizara:
+Se defina la funcion de guardar contraseña 
+Se define la funcion de encriptar y desencriptar contraseñas
+Se define la funcion de guardar mensaje encriptado
+Mientras que opcion sea igual a 1 y menor que 7 se realizara:
   Se da opciones para elegir de un menu
   Si opcion = 1, se llama a la funcion de generar contrañas pidiendose el tamaño de la contraseña, si quiere que tenga mayusculas, si quiere que tenga carateres    especiales y el numero de contraseñas a generar.
   Si opcion = 2, se agrega la a una lista
   Si opcion = 3, se optienen las contrañas guardas en la lista
+  Si opcion = 4, se encripta el texto dado por el usuario
+  Si opcion = 5, se desencripta el texto
+  Si opcion = 6, se imprimen los mensajes encriptados guardados anteriormente
+  Si opcion = 7, se termina el programa
